@@ -19,11 +19,7 @@ function Dog(name) {
     }
   }
 
-  //when manually setting the prototype to a new object it erases the constructor property
-  function Dog(name) {
-    this.name = name;
-  }
-  
+  //when manually setting the prototype to a new object it erases the constructor property 
   Dog.prototype = {
     constructor: Dog, //to fix this we need to define constructor property
     numLegs: 4,
