@@ -43,3 +43,11 @@ function Cat(name) {
   //Object.create method to make instances of Animal
   let duck = Object.create(Animal.prototype);
   let beagle = Object.create(Animal.prototype); //created duck and beagle object
+
+  //set the child's prototype to an instance of the parent
+  function Dog() { }
+  
+  Dog.prototype = Object.create(Animal.prototype); //that instances of Dog inherit from Animal.
+
+  let beagle = new Dog();
+  beagle.eat(); //prints "nom nom nom"
