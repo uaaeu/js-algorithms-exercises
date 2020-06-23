@@ -38,4 +38,8 @@ function Cat(name) {
 
   Bear.prototype = {
     constructor: Bear,
-  };  
+  };
+
+  //Object.create method to make instances of Animal
+  let duck = Object.create(Animal.prototype);
+  let beagle = Object.create(Animal.prototype); //created duck and beagle object
