@@ -23,6 +23,7 @@ function Dog(name) {
   let ownProps = []; //ownProps array is created for store own properties
   let prototypeProps = []; //prototypeProps array is created for store prototype properties
   
+
   // for in loop to add properties to correct array
   for (let property in beagle) {
     if(beagle.hasOwnProperty(property)) {
@@ -47,3 +48,13 @@ function Dog(name) {
       console.log("My name is " + this.name);
     }
   };
+
+//isPrototypeOf method
+  function Dog(name) {
+    this.name = name;
+  }
+  
+  let beagle = new Dog("Snoopy");
+  
+  //using the isPrototypeOf method to check the prototype of beagle
+  Dog.prototype.isPrototypeOf(beagle); //returns true
