@@ -81,7 +81,8 @@ function Dog() {}
 Dog.prototype = Object.create(Animal.prototype); //inherited from Animal
 Dog.prototype.constructor = Dog; //constructor name reset
 
-Dog.prototype.bark = function () { //new method added
+Dog.prototype.bark = function () {
+  //new method added
   console.log("Woof!");
 };
 
@@ -89,3 +90,20 @@ let beagle = new Dog();
 
 beagle.eat(); //prints "nom nom nom"
 beagle.bark(); //prints "Woof!"
+
+//Override Inherited Methods
+function Bird() {}
+
+Bird.prototype.fly = function () {
+  return "I am flying!";
+};
+
+function Penguin() {}
+Penguin.prototype = Object.create(Bird.prototype); //inherit all methods from Animal
+Penguin.prototype.constructor = Penguin; //reset constructor name to Penguin
+
+Penguin.prototype.fly = function () {
+  return "Alas, this is a flightless bird."; //Penguin.fly() overrides Bird.fly()
+};
+
+let penguin = new Penguin();
