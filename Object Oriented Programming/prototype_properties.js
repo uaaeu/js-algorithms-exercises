@@ -9,17 +9,7 @@ function Dog(name) {
   let beagle = new Dog("Snoopy"); //beagle object has numLegs prototype properties too.
 
 
-
-
   //iterate over all properties
-  function Dog(name) {
-    this.name = name; //own property
-  }
-  
-  Dog.prototype.numLegs = 4; //prototype property
-  
-  let beagle = new Dog("Snoopy"); //created beagle object with Dog constructor
-  
   let ownProps = []; //ownProps array is created for store own properties
   let prototypeProps = []; //prototypeProps array is created for store prototype properties
   
@@ -35,9 +25,6 @@ function Dog(name) {
 
 
   //set the prototype to a new object that already contains the properties
-  function Dog(name) {
-    this.name = name;
-  }
   //the way that the properties are added all at once
   Dog.prototype = {
     numLegs: 4,
@@ -49,12 +36,10 @@ function Dog(name) {
     }
   };
 
-//isPrototypeOf method
-  function Dog(name) {
-    this.name = name;
-  }
-  
-  let beagle = new Dog("Snoopy");
-  
-  //using the isPrototypeOf method to check the prototype of beagle
+  //isPrototypeOf method
   Dog.prototype.isPrototypeOf(beagle); //returns true
+
+  //prototype chain
+  Dog.prototype.isPrototypeOf(beagle);  // yields true
+  //Object is a supertype for all objects in JavaScript (Object>Dog>beagle)
+  Object.prototype.isPrototypeOf(Dog.prototype); //returns true
