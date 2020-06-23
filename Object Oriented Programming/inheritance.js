@@ -65,7 +65,27 @@ Bird.prototype.constructor = Bird;
 Dog.prototype.constructor = Dog;
 
 let duck = new Bird();
-let beagle = new Dog();//now duck and beagle.constructor is re set
+let beagle = new Dog(); //now duck and beagle.constructor is re set
 
 duck.constructor; //[Function: Bird]
 beagle.constructor; //[Function: Dog]
+
+//Add Methods After Inheritance
+function Animal() {}
+Animal.prototype.eat = function () {
+  console.log("nom nom nom");
+};
+
+function Dog() {}
+
+Dog.prototype = Object.create(Animal.prototype); //inherited from Animal
+Dog.prototype.constructor = Dog; //constructor name reset
+
+Dog.prototype.bark = function () { //new method added
+  console.log("Woof!");
+};
+
+let beagle = new Dog();
+
+beagle.eat(); //prints "nom nom nom"
+beagle.bark(); //prints "Woof!"
