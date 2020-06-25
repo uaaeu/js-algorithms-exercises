@@ -10,7 +10,7 @@ Array.prototype.myMap = function (callback) {
   return newArray;
 };
 
-var new_s = s.myMap; //new_s become s array
+var new_s = s.myMap(); //new_s become s array
 
 //or we can use forEach() method to map implement
 Array.prototype.myMap = function (callback) {
