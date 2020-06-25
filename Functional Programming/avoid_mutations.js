@@ -19,7 +19,7 @@ incrementer(); //equal to 5
 console.log(fixedValue); //prints 4
 
 
-//or write function with argument
+//or write function with argument (better way)
 function incrementer(value) {
   return value + 1;
 }
