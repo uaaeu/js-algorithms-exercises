@@ -5,3 +5,11 @@ function sliceArray(anim, beginSlice, endSlice) {
 }
 const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
 sliceArray(inputAnim, 1, 3); //returns ["Dog", "Tiger"]
+
+
+//Remove Elements from an Array Using slice Instead of splice
+function nonMutatingSplice(cities) {
+    return cities.slice(0, 3); //returns the first 3 elements
+  }
+  var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+  nonMutatingSplice(inputCities); //returns [ 'Chicago', 'Delhi', 'Islamabad' ]
