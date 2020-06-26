@@ -12,3 +12,14 @@ function ascendingOrder(arr) {
 }
 ascendingOrder([1, 5, 2, 3, 4]);
 // Returns [1, 2, 3, 4, 5]
+
+
+//Return a Sorted Array Without Changing the Original Array
+var globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  //make a clone with .slice() method before sorting
+  return arr.slice().sort((a, b) => a - b);
+}
+
+console.log(nonMutatingSort(globalArray)); //logs [ 2, 3, 5, 6, 9 ]
+console.log(globalArray); //logs [ 5, 6, 3, 2, 9 ]
