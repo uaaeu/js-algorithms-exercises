@@ -8,11 +8,10 @@ alphabeticalOrder(["a", "d", "c", "a", "z", "g"]); //returns [ 'a', 'a', 'c', 'd
 
 //we can sort numbers as well
 function ascendingOrder(arr) {
-  return arr.sort((a, b) => a - b ); //or we can sort reverse with .sort((a, b) => b - a)
+  return arr.sort((a, b) => a - b); //or we can sort reverse with .sort((a, b) => b - a)
 }
 ascendingOrder([1, 5, 2, 3, 4]);
 // Returns [1, 2, 3, 4, 5]
-
 
 //Return a Sorted Array Without Changing the Original Array
 var globalArray = [5, 6, 3, 2, 9];
@@ -23,3 +22,9 @@ function nonMutatingSort(arr) {
 
 console.log(nonMutatingSort(globalArray)); //logs [ 2, 3, 5, 6, 9 ]
 console.log(globalArray); //logs [ 5, 6, 3, 2, 9 ]
+
+//or we can use spread operator
+function nonMutatingSort(arr) {
+  //make a clone with spread operator
+  return [...arr].sort((a, b) => a - b);
+}
